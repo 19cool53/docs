@@ -26,7 +26,11 @@ Then set baud rate with `TCPBaudRate` and port with `TCPStart`.
 You can add a rule to start the TCP server at boot.  
 To do this for port `8888` and allow connections only from host `192.168.0.10`, run `Rule1 ON System#Boot do TCPStart 8888,192.168.0.10 endon` then enable with `Rule1 1` and restart the device.
 
+The TCP Tx / TCP Rx pins must be defined in the module's config, otherwise TCPstart generates an error.
+Using TCPstart 23 will allow a telnet connection to your connected serial device.
+
 ## Additional resources
 
 [PR](https://github.com/arendst/Tasmota/pull/8702)  
 [Sonoff ZBBridge reference](https://zigbee.blakadder.com/Sonoff_ZBBridge.html)
+
